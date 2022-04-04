@@ -10,9 +10,6 @@ int top;
 
  public:
 TStack() :top(-1) { }
-bool isEmpty() {
-return top == -1;
-}
 T get() {
 if (!isEmpty())
 return arr[top];
@@ -21,7 +18,7 @@ throw "Empty!";
 }
 void pop() {
 if (!isEmpty())
---top;
+top--;
 }
 void push(T value) {
 if (isFull())
