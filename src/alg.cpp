@@ -50,7 +50,7 @@ std::string infx2pstfx(std::string inf) {
                 while (!stackk.isEmpty()
                     && (znaki_op(inf[i]) <= znaki_op(stackk.get()))) {
                     output.push_back(stackk.get());
-                    output.push_back(probel);
+                    output.push_back(space);
                     stackk.pop();
                 }
                 stackk.push(inf[i]);
