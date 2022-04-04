@@ -42,13 +42,13 @@ std::string infx2pstfx(std::string inf) {
             } else if (znaki_op(inf[i]) == 1) {
                 while (znaki_op(stackk.get()) != 0) {
                     output.push_back(stackk.get());
-                    output.push_back(probel);
+                    output.push_back(space);
                     stackk.pop();
                 }
                 stackk.pop();
             } else {
                 while (!stackk.isEmpty()
-                    && (znaki_op(inf[i]) <= priority(stackk.get()))) {
+                    && (znaki_op(inf[i]) <= znaki_op(stackk.get()))) {
                     output.push_back(stackk.get());
                     output.push_back(probel);
                     stackk.pop();
@@ -62,7 +62,7 @@ std::string infx2pstfx(std::string inf) {
         output.push_back(space);
         stackk.pop();
     }
-    for (int i = 0; i < outp.size(); i++) {
+    for (int i = 0; i < output.size(); i++) {
         if (output[output.size() - 1] == ' ')
             output.erase(output.size() - 1);
     }
@@ -75,7 +75,7 @@ int eval(std::string pref) {
             stacckk.push(pref[i] - '0');
         } else if (znaki_op(pref[i]) < 4) {
             int x = stacckk.get();
-            stackckk.pop();
+            stacckk.pop();
             int y = stacckk.get();
             stacckk.pop();
             stacckk.push(calcul(pref[i], x, y));
