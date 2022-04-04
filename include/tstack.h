@@ -22,9 +22,9 @@ top--;
 }
 void push(T value) {
 if (isFull())
-arr[++top] = value;
-else
 throw "Full!";
+else
+arr[++top] = value;
 }
 bool isEmpty() const {
 return top == -1;
